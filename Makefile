@@ -43,7 +43,7 @@ devicetree-repack: repack.o
 endif
 
 devicetree-parse.o: devicetree-parse.c $(HEADERS)
-	$(CC) $(CFLAGS) $(FRAMEWORKS) $(DEFINES) $(LDFLAGS) -c -o $@ devicetree-parse.c
+	$(CC) $(CFLAGS) $(DEFINES) $(LDFLAGS) -c -o $@ devicetree-parse.c
 
 parse.o: parse.c $(HEADERS)
 	$(CC) $(CFLAGS) $(FRAMEWORKS) $(DEFINES) $(LDFLAGS) -c -o $@ parse.c
