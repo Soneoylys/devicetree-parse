@@ -9,24 +9,28 @@
 #include <stddef.h>
 #include <stdint.h>
 
-typedef void (^devicetree_iterate_node_callback_t)(
+typedef void (*devicetree_iterate_node_callback_t)(
 		unsigned depth,
 		const void *node, size_t size,
 		unsigned n_properties, unsigned n_children,
-		bool *stop);
+		bool *stop,
+		void *ctx);
 
-typedef void (^devicetree_iterate_property_callback_t)(
+typedef void (*devicetree_iterate_property_callback_t)(
 		unsigned depth,
 		const char *name,
 		const void *value, size_t size,
 		uint32_t flags,
-		bool *stop);
+		bool *stop,
+		void *ctx);
 
 bool devicetree_iterate(const void **data, size_t size,
 		devicetree_iterate_node_callback_t node_callback,
-		devicetree_iterate_property_callback_t property_callback);
+		devicetree_iterate_property_callback_t property_callback,
+		void *ctx);
 
 bool devicetree_node_scan_properties(const void *node, size_t size,
-		devicetree_iterate_property_callback_t property_callback);
+		devicetree_iterate_property_callback_t property_callback,
+		void *ctx);
 
 #endif
