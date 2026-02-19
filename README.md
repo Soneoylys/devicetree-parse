@@ -2,6 +2,11 @@
 
 This is a small utility to parse Apple's binary device tree format to json with `devicetree-parse` and vice versa with `devicetree-repack`.
 
+## Platform support
+
+- `devicetree-parse` now builds on Linux and macOS.
+- `devicetree-repack` still depends on Foundation and is only built on macOS by default.
+
 ## Usage
 
 Run devicetree-parse on a raw binary devicetree (i.e. not encrypted or wrapped in an IMG4 file).
