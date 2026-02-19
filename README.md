@@ -5,7 +5,7 @@ This is a small utility to parse Apple's binary device tree format to json with 
 ## Platform support
 
 - `devicetree-parse` now builds on Linux and macOS.
-- `devicetree-repack` is now a portable Python tool and is built on Linux and macOS.
+- `devicetree-repack` still depends on Foundation and is only built on macOS by default.
 
 ## Usage
 
